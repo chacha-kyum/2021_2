@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      width: 400px;
+      margin: center 0 auto; 
+    }
+    #clock  {
+      width: 100px; float: center;
+      background-color: rgb(33, 186, 224)
+    }
+    #main  {
+      width: 250px; float: center;
+      background-color: rgb(33, 186, 224)
+    }
+  </style>
+  <script>
+    function printTime(){
+      var clock = document.getElementById("clock"); //출력장소
+      var now = new Date(); //현재시간
+      var pTime = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + "";
+      clock.innerHTML = pTime;
+      setTimeout("printTime()",1000); 
+    }
+    window.onload = function(){
+      printTime();
+    }
+  </script>
+</head>
+<body>
+  <div id="main">
+    <h1>현재 시간 <br><span id="clock"></span> <br></h1>
+  </div>
+</body>
+</html>
